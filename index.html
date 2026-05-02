@@ -2,48 +2,35 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>TangibleFlow · Bangun Bisnis dengan Hasil Nyata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TangibleFlow · Bangun Bisnis Hasil Nyata</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             background: #F9FBFD;
             color: #1A2C3E;
             line-height: 1.5;
             scroll-behavior: smooth;
         }
-
-        /* Warna utama: kepercayaan (biru gelap) + aksen pertumbuhan (hijau toska) */
         :root {
             --primary: #0F3B5F;
             --primary-light: #2C5A7A;
             --secondary: #2A9D8F;
-            --secondary-light: #6DC9BC;
             --accent: #E9C46A;
-            --gray-bg: #F8FAFE;
-            --gray-light: #EFF3F8;
-            --text-dark: #1E2F3D;
             --text-muted: #5A6E7C;
-            --success: #2A9D8F;
-            --shadow-sm: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
             --shadow-md: 0 12px 28px rgba(0,0,0,0.08);
             --radius-card: 24px;
         }
-
-        /* Container & layout */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
-
-        /* Navigasi */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -52,13 +39,11 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-
         .logo-icon {
             width: 44px;
             height: 44px;
@@ -67,38 +52,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: var(--shadow-sm);
         }
-
         .logo-icon svg {
             width: 28px;
             height: 28px;
             color: white;
         }
-
         .logo-text {
             font-size: 1.7rem;
             font-weight: 700;
-            letter-spacing: -0.3px;
             background: linear-gradient(120deg, var(--primary), var(--secondary));
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--primary);
             font-weight: 500;
             margin-left: 28px;
-            transition: 0.2s;
         }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        /* Buttons */
         .btn-primary {
             background: var(--primary);
             color: white;
@@ -106,127 +79,51 @@
             padding: 14px 32px;
             border-radius: 40px;
             font-weight: 600;
-            font-size: 1rem;
             cursor: pointer;
             transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: var(--shadow-sm);
         }
-
         .btn-primary:hover {
             background: var(--primary-light);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
         }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
-
-        .btn-outline:hover {
-            background: var(--secondary);
-            color: white;
-        }
-
-        /* Hero */
         .hero {
-            padding: 50px 0 40px 0;
+            padding: 50px 0 40px;
             text-align: center;
         }
-
         .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.2;
+            font-size: 3rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            max-width: 900px;
-            margin: 0 auto 20px;
         }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 32px;
-        }
-
         .hero-stats {
             display: flex;
             justify-content: center;
             gap: 48px;
-            flex-wrap: wrap;
             margin-top: 40px;
         }
-
-        .stat {
-            text-align: center;
-        }
-
         .stat-number {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--primary);
         }
-
-        .stat-label {
-            color: var(--text-muted);
-        }
-
-        /* Card section */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 16px;
-        }
-
-        .section-sub {
-            text-align: center;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 48px;
-        }
-
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 32px;
             margin: 48px 0;
         }
-
         .benefit-card {
             background: white;
             border-radius: var(--radius-card);
             padding: 32px 24px;
-            box-shadow: var(--shadow-sm);
-            transition: 0.25s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             text-align: center;
-            border: 1px solid #eef2f8;
         }
-
-        .benefit-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .benefit-icon {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        /* Form */
         .form-card {
             background: white;
             border-radius: var(--radius-card);
@@ -234,50 +131,33 @@
             box-shadow: var(--shadow-md);
             max-width: 700px;
             margin: 40px auto;
-            border: 1px solid rgba(42, 157, 143, 0.2);
         }
-
         .form-group {
             margin-bottom: 24px;
         }
-
         label {
             font-weight: 600;
             display: block;
             margin-bottom: 8px;
-            color: var(--text-dark);
         }
-
         input, textarea {
             width: 100%;
             padding: 14px 18px;
             border: 1px solid #CDDFE6;
             border-radius: 20px;
-            font-size: 1rem;
-            transition: 0.2s;
             font-family: inherit;
         }
-
         input:focus, textarea:focus {
             outline: none;
             border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.2);
         }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        /* Trust section */
         .trust-section {
-            background: var(--gray-bg);
+            background: #F8FAFE;
             border-radius: 48px;
             padding: 60px 40px;
             margin: 60px 0;
             text-align: center;
         }
-
         .trust-badges {
             display: flex;
             flex-wrap: wrap;
@@ -285,18 +165,12 @@
             gap: 28px;
             margin: 32px 0;
         }
-
         .badge {
             background: white;
             padding: 12px 24px;
             border-radius: 60px;
             font-weight: 500;
-            box-shadow: var(--shadow-sm);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
-
         .testimonial {
             max-width: 600px;
             margin: 40px auto;
@@ -304,10 +178,7 @@
             padding: 28px;
             border-radius: 32px;
             font-style: italic;
-            box-shadow: var(--shadow-sm);
         }
-
-        /* Footer */
         .footer {
             background: var(--primary);
             color: #CDE5F0;
@@ -315,51 +186,47 @@
             margin-top: 60px;
             border-radius: 40px 40px 0 0;
         }
-
-        .footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        /* Toast */
         .toast {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--primary);
+            background: #1E2F3D;
             color: white;
             padding: 14px 24px;
             border-radius: 40px;
-            font-weight: 500;
             z-index: 1000;
-            box-shadow: var(--shadow-md);
             opacity: 0;
             transition: 0.3s;
             pointer-events: none;
         }
-
         .toast.show {
             opacity: 1;
-            pointer-events: none;
         }
-
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
         @media (max-width: 780px) {
             .hero h1 { font-size: 2rem; }
-            .navbar { flex-direction: column; text-align: center; }
+            .navbar { flex-direction: column; }
             .nav-links a { margin: 0 12px; }
-            .form-card { padding: 28px; }
-            .trust-section { padding: 32px 20px; }
         }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <!-- Header + Logo -->
     <nav class="navbar">
         <div class="logo">
             <div class="logo-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
             <span class="logo-text">TangibleFlow</span>
         </div>
@@ -370,206 +237,198 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
-        <h1>Bangun Bisnis yang Menghasilkan <span style="color:var(--secondary)">Hasil Nyata</span>, Bukan Sekadar Janji</h1>
-        <p>Strategi teruji, eksekusi tepat, dan transformasi growth yang terukur. Ribuan klien sukses tingkatkan omset hingga 3x lipat.</p>
+        <h1>Bangun Bisnis yang Menghasilkan <span style="color:var(--secondary)">Hasil Nyata</span></h1>
+        <p>Strategi teruji + eksekusi tepat. Ribuan klien naikkan omset hingga 3x lipat.</p>
         <div class="hero-stats">
-            <div class="stat"><div class="stat-number">+327%</div><div class="stat-label">Rata-rata pertumbuhan</div></div>
-            <div class="stat"><div class="stat-number">1.200+</div><div class="stat-label">Bisnis terbantu</div></div>
-            <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Klien rekomendasikan</div></div>
+            <div><div class="stat-number">+327%</div><div>Pertumbuhan</div></div>
+            <div><div class="stat-number">1.200+</div><div>Bisnis terbantu</div></div>
+            <div><div class="stat-number">98%</div><div>Klien puas</div></div>
         </div>
-        <a href="#form" class="btn-primary" style="margin-top: 24px; display: inline-block;">🎯 Dapatkan Strategi Gratis</a>
     </section>
 
-    <!-- Benefit / hasil nyata -->
     <div id="hasil">
-        <h2 class="section-title">Mengapa Ekosistem TangibleFlow?</h2>
-        <div class="section-sub">Kami tidak hanya memberikan teori—kami membangun infrastruktur revenue dan audiens loyal.</div>
+        <h2 style="text-align:center;">Mengapa TangibleFlow?</h2>
         <div class="benefits-grid">
-            <div class="benefit-card"><div class="benefit-icon">📊</div><h3>Data-Driven Execution</h3><p>Keputusan berbasis real-time analytics, bukan feeling. Setiap langkah menghasilkan ROI jelas.</p></div>
-            <div class="benefit-card"><div class="benefit-icon">🧠</div><h3>Copywriting Konversi Tinggi</h3><p>Script & konten yang memicu aksi, meningkatkan LTV pelanggan hingga 2,5x dalam 90 hari.</p></div>
-            <div class="benefit-card"><div class="benefit-icon">⚡</div><h3>Automasi Growth</h3><p>Bangun funnel otomatis yang bekerja 24/7: dari leads jadi revenue nyata.</p></div>
+            <div class="benefit-card"><div style="font-size:2.8rem;">📊</div><h3>Data-Driven</h3><p>Keputusan berdasarkan real-time analytics, ROI terukur.</p></div>
+            <div class="benefit-card"><div style="font-size:2.8rem;">🧠</div><h3>Copywriting Konversi</h3><p>Konten memicu aksi, tingkatkan LTV hingga 2,5x.</p></div>
+            <div class="benefit-card"><div style="font-size:2.8rem;">⚡</div><h3>Automasi Growth</h3><p>Funnel otomatis 24/7 dari leads ke revenue.</p></div>
         </div>
     </div>
 
-    <!-- Form + Spreadsheet (Nama, Email, Keluhan) -->
     <div id="form">
         <div class="form-card">
-            <h2 style="font-size: 1.8rem; margin-bottom: 8px;">🎯 Ceritakan Keluhan Bisnis Anda</h2>
-            <p style="margin-bottom: 28px; color: var(--text-muted);">Data Anda akan langsung masuk ke spreadsheet rahasia tim ahli kami, lalu kami kirimkan solusi personalisasi.</p>
+            <h2 style="font-size:1.8rem;">🎯 Ceritakan Keluhan Bisnis Anda</h2>
+            <p>Data akan langsung masuk ke spreadsheet, tim merespon dalam 24 jam.</p>
             <form id="leadForm">
                 <div class="form-group">
                     <label>Nama Lengkap</label>
-                    <input type="text" id="nama" placeholder="cth: Budi Santoso" required>
+                    <input type="text" id="nama" placeholder="Budi Santoso" required>
                 </div>
                 <div class="form-group">
                     <label>Email Aktif</label>
-                    <input type="email" id="email" placeholder="budi@bisnisanda.com" required>
+                    <input type="email" id="email" placeholder="budi@bisnis.com" required>
                 </div>
                 <div class="form-group">
-                    <label>Apa keluhan terbesar dalam mengembangkan bisnis saat ini?</label>
-                    <textarea id="keluhan" placeholder="Contoh: Saya kesulitan mendapatkan leads berkualitas / tim sales tidak konsisten / copywriting tidak mengkonversi ..." required></textarea>
+                    <label>Keluhan terbesar dalam mengembangkan bisnis?</label>
+                    <textarea id="keluhan" placeholder="Contoh: Sulit dapat leads berkualitas / copywriting tidak konversi ..." required></textarea>
                 </div>
                 <div class="form-group">
-                    <label style="display: flex; gap: 10px; align-items: center;">
-                        <input type="checkbox" id="subscribe" checked style="width: 20px;"> 
-                        <span>Ingin mendapat akses gratis ke modul growth & studi kasus (membangun audiens)</span>
+                    <label style="display:flex; gap:10px;">
+                        <input type="checkbox" id="subscribe" checked> Dapatkan akses gratis modul growth
                     </label>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">📩 Kirim & Dapatkan Analisis Awal</button>
-                <p style="font-size: 0.75rem; margin-top: 18px; text-align: center;">Data aman, privasi terlindungi. Kami anti-spam.</p>
+                <button type="submit" id="submitBtn" class="btn-primary" style="width:100%;">
+                    <span id="btnText">📩 Kirim & Dapatkan Analisis</span>
+                    <span id="btnLoader" style="display:none;"><div class="loading-spinner"></div></span>
+                </button>
+                <div id="formStatus" style="margin-top:16px; text-align:center;"></div>
             </form>
-            <div id="formStatus" style="margin-top: 16px; text-align: center; font-weight: 500;"></div>
         </div>
     </div>
 
-    <!-- Trust building (bagian terpenting) -->
     <div id="kepercayaan" class="trust-section">
-        <h2 style="font-size: 2rem;">🏆 Membangun Kepercayaan Adalah Fondasi Kami</h2>
+        <h2>🏆 Membangun Kepercayaan Adalah Prioritas</h2>
         <div class="trust-badges">
             <div class="badge">🔒 100% Garansi Kepuasan</div>
-            <div class="badge">⭐ 4.98/5 dari 500+ ulasan</div>
-            <div class="badge">📜 Konsultan Bersertifikasi</div>
-            <div class="badge">🚀 Sudah 1.200+ bisnis impact</div>
+            <div class="badge">⭐ 4.98/5 (500+ ulasan)</div>
+            <div class="badge">📜 Bersertifikasi</div>
+            <div class="badge">🚀 1.200+ bisnis impact</div>
         </div>
         <div class="testimonial">
-            “Dalam 4 bulan menggunakan framework TangibleFlow, omzet naik 187% dan tim saya lebih fokus eksekusi. Akhirnya ada hasil nyata!”
-            <div style="margin-top: 12px; font-weight: 700;">— Jessica Wijaya, Founder Herbasa</div>
+            “Dalam 4 bulan, omzet naik 187% dan tim lebih fokus. Akhirnya hasil nyata!”
+            <div style="margin-top:12px;">— Jessica Wijaya, Founder Herbasa</div>
         </div>
         <div class="testimonial">
-            "Saya ragu, tapi setelah mengisi keluhan, mereka kasih strategi spesifik. Sekarang lead bulanan tembus 500+. Ini yang namanya hasil!"
-            <div style="margin-top: 12px; font-weight: 700;">— Rizki F, CEO Edunify</div>
-        </div>
-        <div style="margin-top: 32px;">
-            <a href="#form" class="btn-outline" style="border-color: white; background: white; color: var(--primary);">😊 Saya Ingin Konsultasi Gratis</a>
+            "Setelah isi keluhan, mereka kasih strategi spesifik. Lead bulanan tembus 500+!"
+            <div style="margin-top:12px;">— Rizki F, CEO Edunify</div>
         </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
-        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px;">
-            <div><strong>TangibleFlow</strong><br>Bangun hasil nyata, bangun audiens loyal.</div>
-            <div>📧 hello@tangibleflow.id<br>📍 Jakarta • Bali • Surabaya</div>
-            <div>© 2025 — All rights reserved</div>
+        <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between;">
+            <div><strong>TangibleFlow</strong><br>Bangun hasil nyata, audiens loyal.</div>
+            <div>📧 hello@tangibleflow.id<br>📍 Jakarta • Bali</div>
+            <div>© 2025 TangibleFlow</div>
         </div>
     </div>
 </div>
-
-<div id="toastMsg" class="toast">✅ Data terkirim ke spreadsheet!</div>
+<div id="toastMsg" class="toast"></div>
 
 <script>
-    // ======================= INTEGRASI GOOGLE SPREADSHEET =======================
-    // PETUNJUK: Buat Google Sheet, lalu buka Extensions > Apps Script, paste kode di bawah.
-    // Deploy sebagai Web App (Execute as Me, Access Anyone). Copy URL lalu ganti URL_DEPLOY_SCRIPT berikut.
-    // Jika belum deploy, form akan menyimpan data ke localStorage & console (simulasi).
-    // ----------------------------------------------------------------------------
-    const SPREADSHEET_WEBAPP_URL = "https://scrip"; 
-    // GANTI URL di atas setelah deploy Google Apps Script. Atau biarkan sebagai placeholder, maka akan pakai fallback.
+    // ========== GANTI URL INI DENGAN HASIL DEPLOY APPS SCRIPT ANDA ==========
+    const SPREADSHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzCRnxdeGq9tzEmPqMM9NMSybhe03w6umOixG6hkg7YB-OUAiST3TcMyOj6PCo0kduX5Q/exec";
     
     const form = document.getElementById('leadForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnLoader = document.getElementById('btnLoader');
     const statusDiv = document.getElementById('formStatus');
-    const toast = document.getElementById('https://script.google.com/macros/library/d/1h1OaU79QgR90uf6zcNfyS2192Y8ACLjSakVdxU8hrCl8n6T-s0qYCeeD/1');
-
-    function showToast(message, isError = false) {
-        toast.textContent = isError ? '⚠️ ' + message : '✅ ' + message;
+    const toast = document.getElementById('toastMsg');
+    
+    function showToast(msg, isError = false) {
+        toast.textContent = (isError ? '⚠️ ' : '✅ ') + msg;
         toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3500);
+        setTimeout(() => toast.classList.remove('show'), 4000);
     }
-
-    // fungsi kirim ke spreadsheet via GET/POST (JSONP tidak perlu, pake fetch)
-    async function kirimKeSpreadsheet(data) {
-        // Jika URL masih placeholder, lakukan simpan lokal & console
-        if (SPREADSHEET_WEBAPP_URL.includes("placeholder_ubah_dengan_url_anda")) {
-            console.warn("Belum konfigurasi Google Apps Script. Data tersimpan di localStorage & console.");
-            // Simpan ke localStorage untuk audit
+    
+    async function sendToSheet(data, retry = 0) {
+        if (SPREADSHEET_WEBAPP_URL.includes("placeholder_ganti_dengan_url_anda")) {
+            // Mode demo
             let saved = JSON.parse(localStorage.getItem('tangibleflow_leads') || '[]');
             saved.push({ ...data, timestamp: new Date().toISOString() });
             localStorage.setItem('tangibleflow_leads', JSON.stringify(saved));
-            showToast("Data tersimpan (mode demo), hubungkan ke spreadsheet untuk live.", false);
-            return true;
+            return { success: true, demo: true };
         }
-
+        
         try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 10000);
             const response = await fetch(SPREADSHEET_WEBAPP_URL, {
                 method: 'POST',
-                mode: 'no-cors', // jika script sudah mengizinkan, bisa pakai cors. Tapi no-cors untuk kemudahan
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(data)
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+                signal: controller.signal
             });
-            // Karena mode no-cors, tidak bisa baca response, asumsikan sukses
-            showToast("Data masuk ke spreadsheet! Tim kami akan menghubungi.", false);
-            return true;
-        } catch (error) {
-            console.error(error);
-            showToast("Gagal terhubung, simpan lokal dulu.", true);
-            // fallback simpan lokal
-            let saved = JSON.parse(localStorage.getItem('tangibleflow_leads') || '[]');
-            saved.push({ ...data, timestamp: new Date().toISOString() });
-            localStorage.setItem('tangibleflow_leads', JSON.stringify(saved));
-            return false;
+            clearTimeout(timeout);
+            const result = await response.json();
+            if (result.status === 'success') return { success: true };
+            throw new Error(result.message || 'Gagal');
+        } catch (err) {
+            if (retry < 1) {
+                await new Promise(r => setTimeout(r, 1000));
+                return sendToSheet(data, retry + 1);
+            }
+            return { success: false, error: err.message };
         }
     }
-
+    
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const nama = document.getElementById('nama').value.trim();
         const email = document.getElementById('email').value.trim();
         const keluhan = document.getElementById('keluhan').value.trim();
         const subscribe = document.getElementById('subscribe').checked;
-
+        
         if (!nama || !email || !keluhan) {
-            showToast("Harap isi nama, email, dan keluhan terlebih dahulu.", true);
+            showToast("Harap isi semua field!", true);
             return;
         }
         if (!email.includes('@')) {
             showToast("Email tidak valid.", true);
             return;
         }
-
-        statusDiv.innerHTML = "⏳ Mengirim data ke spreadsheet ...";
+        
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoader.style.display = 'inline-block';
+        statusDiv.innerHTML = "⏳ Mengirim data...";
+        
         const formData = {
-            nama: nama,
-            email: email,
-            keluhan: keluhan,
+            nama, email, keluhan,
             subscribe: subscribe ? "Ya" : "Tidak",
             sumber: "Website TangibleFlow",
             waktu: new Date().toISOString()
         };
-
-        await kirimKeSpreadsheet(formData);
-        statusDiv.innerHTML = "✨ Terima kasih! Kami akan menganalisis keluhan Anda dan membalas dalam 1x24 jam.";
-        form.reset();
-        // Optional: reset checkbox tetap true agar user nyaman
-        document.getElementById('subscribe').checked = true;
-        setTimeout(() => statusDiv.innerHTML = "", 5000);
+        
+        const result = await sendToSheet(formData);
+        
+        submitBtn.disabled = false;
+        btnText.style.display = 'inline-block';
+        btnLoader.style.display = 'none';
+        
+        if (result.success) {
+            if (result.demo) {
+                statusDiv.innerHTML = "✅ Data tersimpan lokal (mode demo). Ganti URL untuk live spreadsheet.";
+                showToast("Mode demo: data disimpan di browser", false);
+            } else {
+                statusDiv.innerHTML = "✨ Terima kasih! Data sudah masuk spreadsheet. Tim akan merespon 1x24 jam.";
+                showToast("Data berhasil dikirim ke spreadsheet!", false);
+            }
+            form.reset();
+            document.getElementById('subscribe').checked = true;
+        } else {
+            statusDiv.innerHTML = "❌ Gagal mengirim: " + (result.error || "Coba lagi");
+            showToast("Gagal mengirim, cek koneksi atau URL Apps Script", true);
+            // fallback lokal
+            let fallback = JSON.parse(localStorage.getItem('tangibleflow_fallback') || '[]');
+            fallback.push(formData);
+            localStorage.setItem('tangibleflow_fallback', JSON.stringify(fallback));
+        }
     });
-
-    // ============ INSTRUKSI APPS SCRIPT (copy dan paste ke Google Apps Script) ============
-    console.log(`
-    ╔══════════════════════════════════════════════════════════════╗
-    ║  CARA SETUP SPREADSHEET NYATA:                               ║
-    ║  1. Buat Google Sheet baru, lalu menu Extensions > Apps Script ║
-    ║  2. Hapus kode dan paste kode di bawah                       ║
-    ║  3. Deploy > New deployment > Web app > Execute as Me (Anyone) ║
-    ║  4. Copy URL lalu ganti variable SPREADSHEET_WEBAPP_URL di atas ║
-    ╚══════════════════════════════════════════════════════════════╝
-
-    // Kode Apps Script (code.gs):
-    function doPost(e) {
-      const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-      const data = e.parameter;
-      sheet.appendRow([
-        new Date(), data.nama, data.email, data.keluhan, data.subscribe, data.sumber, data.waktu || new Date()
-      ]);
-      return ContentService.createTextOutput("OK");
+    
+    // Tampilkan info jika mode demo
+    if (SPREADSHEET_WEBAPP_URL.includes("placeholder")) {
+        const info = document.createElement('div');
+        info.style.background = "#EFF3F8";
+        info.style.padding = "12px";
+        info.style.borderRadius = "20px";
+        info.style.marginBottom = "20px";
+        info.style.textAlign = "center";
+        info.innerHTML = "📌 <strong>Mode Demo:</strong> Data disimpan di browser. Ganti URL Apps Script untuk live ke spreadsheet.";
+        document.querySelector('.form-card').prepend(info);
     }
-    `);
 </script>
-
-<!-- Bawa instruksi tambahan agar user integrasi spreadsheet -->
-<div style="position: fixed; bottom: 15px; left: 15px; background: #EFF3F8; padding: 10px 16px; border-radius: 40px; font-size: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 999;">
-    💡 Integrasi spreadsheet: buka console (F12) lihat panduan Apps Script.
-</div>
 </body>
 </html>
